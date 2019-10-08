@@ -1,0 +1,11 @@
+[package]
+name = "fs"
+version = "0.1.0"
+authors = ["mcelkys"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "1"
+actix-files = "0.1"
