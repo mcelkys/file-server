@@ -1,6 +1,6 @@
 [package]
 name = "fs"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["mcelkys"]
 edition = "2018"
 
