@@ -3,7 +3,6 @@ name = "fs"
 version = "1.0.0"
 description = "Static HTTP file server for web developers."
 authors = ["Mindaugas Celkys"]
-license = "MIT License"
 license-file = "LICENSE"
 edition = "2018"
 
