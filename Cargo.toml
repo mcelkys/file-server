@@ -1,5 +1,5 @@
 [package]
-name = "fs"
+name = "file-server"
 version = "1.0.0"
 description = "Static HTTP file server for web developers."
 authors = ["Mindaugas Celkys"]
