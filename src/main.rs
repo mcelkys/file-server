@@ -13,13 +13,18 @@ fn main() {
         None => String::from("80"),
     };
     let address = String::from("127.0.0.1:") + &port;
-    println!("File server is running at {}", address);
-    HttpServer::new(|| {
+    let server = HttpServer::new(|| {
         let service = Files::new("/", ".").index_file("index.html");
         App::new().service(service)
-    })
-    .bind(address)
-    .unwrap()
-    .run()
-    .unwrap();
+    });
+    match server.bind(address.clone()) {
+        Ok(server) => {
+            println!("Starting file server at {}", address);
+            match server.run() {
+                Ok(_) => {}
+                Err(error) => println!("{}", error),
+            }
+        }
+        Err(error) => println!("{}", error),
+    }
 }
