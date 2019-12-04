@@ -8,15 +8,15 @@ Make sure you first [install Cargo](https://doc.rust-lang.org/cargo/), then run 
 cargo install file-server
 ```
 
-## Running
+## Basic Usage
 
 To start the server, run the following command in your terminal at the root directory of your project (your `index.html` file will likely be there):
 
 ```
-file-server <PORT>
+file-server -p <PORT>
 ```
 
 For example:
 ```
-file-server 8080
+file-server -p 8080
 ```
