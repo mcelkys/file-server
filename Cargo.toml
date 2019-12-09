@@ -1,6 +1,6 @@
 [package]
 name = "file-server"
-version = "1.2.0"
+version = "1.3.0"
 description = "Static HTTP file server for web developers."
 authors = ["Mindaugas Celkys <mindaugas.celkys@gmail.com>"]
 license = "MIT"

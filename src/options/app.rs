@@ -14,7 +14,7 @@ pub struct AppOptions<'a> {
 impl AppOptions<'_> {
     pub fn new() -> Self {
         let app = App::new("File Server")
-            .version("1.2.0")
+            .version("1.3.0")
             .author("Mindaugas Celkys <mindaugas.celkys@gmail.com>")
             .about("Static HTTP file server for web developers")
             .arg(
@@ -147,6 +147,16 @@ impl AppOptions<'_> {
                     .takes_value(true)
                     .number_of_values(1)
                     .multiple(false),
+            )
+            .arg(
+                Arg::with_name("address")
+                    .short("a")
+                    .long("address")
+                    .help("Binds HTTP server to a specified IP address")
+                    .takes_value(true)
+                    .number_of_values(1)
+                    .multiple(false)
+                    .default_value("127.0.0.1")
             );
         Self {
             matches: app.get_matches(),
@@ -176,8 +186,9 @@ impl AppOptions<'_> {
         }
     }
     pub fn address(&self) -> String {
+        let ip = self.get_string("address");
         let port = self.get_string("port");
-        String::from("127.0.0.1:") + &port
+        ip + ":" + &port
     }
     pub fn service_options(&self) -> ServiceOptions {
         ServiceOptions::from_app_options(self)
